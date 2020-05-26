@@ -81,6 +81,9 @@ class YahtzeeSpel {
         System.out.println("Welke dobbelstenen wil je vasthouden?");
         Scanner input = new Scanner(System.in);
         String keuze = input.nextLine();
+        for (int a = 0; a < 5; a++) {
+            blokkeer.set(a, 0);
+        }
         if (keuze.equals("")) {
             for (int i = 0; i < 5; i++) {
                 blokkeer.set(i, 0);
@@ -98,8 +101,6 @@ class YahtzeeSpel {
                 for (int a = 0; a < blokkeer.size(); a++) {
                     if (y == a) {
                         blokkeer.set(a, 1);
-                    } else if (y != a) {
-                        blokkeer.set(a, 0);
                     }
                 }
             }
